@@ -1,11 +1,11 @@
 import cron from "cron";
-
-import http from "http";
+import https from "https";
 
 const jobs = new cron.CronJob("*/14 * * * * ", function () {
-  http
+  https
     .get(process.env.API_URL, (res) => {
-      if (res.statusCode === 200) console.log("running on every 15 minutes");
+      if (res.statusCode === 200)
+        console.log("GET running on every 14 minutes");
       else console.error("get request failed", res.statusCode);
     })
     .on("error", (e) => console.log(`res response failed ${e}`));
