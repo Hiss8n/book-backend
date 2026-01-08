@@ -11,7 +11,7 @@ const app = express();
 const PORT = process.env.PORT;
 
 /* jobs.start(); */
-if (process.env.NODE_ENV === "production") jobs.start();
+/* if (process.env.NODE_ENV === "production") */ jobs.start();
 
 app.use(
   cors({
