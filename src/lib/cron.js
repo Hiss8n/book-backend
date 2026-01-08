@@ -2,7 +2,7 @@ import cron from "cron";
 
 import http from "http";
 
-const jobs = new cron.CronJob("*/840 * * * * *", function () {
+const jobs = new cron.CronJob("*/14 * * * * ", function () {
   http
     .get(process.env.API_URL, (res) => {
       if (res.statusCode === 200) console.log("running on every 15 minutes");
