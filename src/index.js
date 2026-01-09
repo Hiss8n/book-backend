@@ -37,6 +37,9 @@ app.use(express.json({ limit: "10mb" }));
 
 app.use("/api/auth", router);
 app.use("/api/books", bookRoutes);
+app.use("/", (req, res) => {
+  res.send("Welcome to BookHub API working up and running");
+});
 
 app.listen(PORT, () => {
   connectDb();

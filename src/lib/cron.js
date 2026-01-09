@@ -3,7 +3,7 @@ import https from "https";
 
 const jobs = new cron.CronJob("*/14 * * * *  ", function () {
   https
-    .get(`${process.env.API_URL}/api/books`, (res) => {
+    .get(`${process.env.API_URL}`, (res) => {
       if (res.statusCode === 200) {
         console.log("GET running on every 14 minutes");
       } else console.error("get request failed", res.statusCode);
