@@ -8,7 +8,7 @@ import jobs from "./lib/cron.js";
 
 const app = express();
 
-const API_URL = process.env.API_URL || "https://book-backend-dt7d.onrender.com";
+const PORT = process.env.PORT || 3000;
 
 jobs.start();
 
@@ -38,7 +38,7 @@ app.use(express.json({ limit: "10mb" }));
 app.use("/api/auth", router);
 app.use("/api/books", bookRoutes);
 
-app.listen(API_URL, () => {
+app.listen(PORT, () => {
   connectDb();
-  console.log(`server is running at port ${API_URL}...`);
+  console.log(`server is running at port ${PORT}...`);
 });
